@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -17,9 +18,8 @@ export class AppComponent {
   city: string = '';
   weatherData: any = null;
   error: string = '';
-
-  private apiKey: string = 'deb270b3f6218164ccaac3983eb72d3a';
-  private apiUrl: string = 'https://api.openweathermap.org/data/2.5/weather';
+  private apiKey: string = environment.apiKey;
+  private apiUrl: string = environment.apiUrl;
 
   constructor(private http: HttpClient) {}
 
