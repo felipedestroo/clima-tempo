@@ -1,26 +1,29 @@
-<div class="weather-app">
-  <h1>Consulta de Clima</h1>
+<div class="container">
+  <div class="weather-app">
+    <h1>Consulta de Clima</h1>
+    
+    <form (submit)="getWeather()">
+      <input
+        type="text"
+        [(ngModel)]="city"
+        name="city"
+        placeholder="Digite o nome da cidade"
+        required
+      />
+      <button type="submit">Buscar</button>
+    </form>
   
-  <form (submit)="getWeather()">
-    <input
-      type="text"
-      [(ngModel)]="city"
-      name="city"
-      placeholder="Digite o nome da cidade"
-      required
-    />
-    <button type="submit">Buscar</button>
-  </form>
-
-  <div *ngIf="weatherData" class="weather-info">
-    <h2>{{ weatherData.name }} - {{ weatherData.sys.country }}</h2>
-    <p>Temperatura: {{ weatherData.main.temp }}°C</p>
-    <p>Clima: {{ weatherData.weather[0].description }}</p>
-    <img
-      [src]="'http://openweathermap.org/img/wn/' + weatherData.weather[0].icon + '@2x.png'"
-      alt="Ícone do clima"
-    />
+    <div *ngIf="weatherData" class="weather-info">
+      <h2>{{ weatherData.name }} - {{ weatherData.sys.country }}</h2>
+      <p>Temperatura: {{ weatherData.main.temp }}°C</p>
+      <p>Clima: {{ weatherData.weather[0].description }}</p>
+      <img
+        [src]="'http://openweathermap.org/img/wn/' + weatherData.weather[0].icon + '@2x.png'"
+        alt="Ícone do clima"
+      />
+    </div>
+  
+    <p *ngIf="error" class="error">{{ error }}</p>
   </div>
-
-  <p *ngIf="error" class="error">{{ error }}</p>
 </div>
+
