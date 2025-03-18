@@ -85,7 +85,7 @@ https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}&un
     ```bash
     npm install
     
-3. Configure sua chave da API da OpenWeatherMap no arquivo app.component.ts.
+3. Configure sua chave da API da OpenWeatherMap no arquivo \src\environments\environment.prod.ts
 
 4. Rode o projeto localmente:
     ```bash
