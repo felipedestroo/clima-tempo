@@ -1,59 +1,95 @@
-# ClimaTempo
+# 🌤️ Weather App - Consulta de Clima com Angular + OpenWeatherMap API
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.3.
+Este projeto é uma aplicação web simples desenvolvida em **Angular** que permite ao usuário consultar as condições climáticas de qualquer cidade do mundo em tempo real, utilizando a **OpenWeatherMap API**.
 
-## Development server
+## 🎯 Objetivo
 
-To start a local development server, run:
+O objetivo deste projeto é fornecer uma interface amigável e responsiva onde o usuário pode:
+- Buscar informações de clima de qualquer cidade.
+- Ver detalhes como temperatura atual e descrição do clima.
+- Exibir ícones representativos do clima atual.
 
-```bash
-ng serve
+Além disso, o projeto foi desenvolvido com foco em boas práticas de desenvolvimento web, como:
+- Design responsivo.
+- Código modular.
+- Estrutura clara de arquivos Angular.
+
+## 🛠️ Tecnologias Utilizadas
+
+- **Angular (v17+)**
+- **TypeScript**
+- **HTML5 e CSS3 (com Flexbox e Gradiente)**
+- **OpenWeatherMap API** ([https://openweathermap.org/api](https://openweathermap.org/api))
+
+## 🚀 Funcionalidades
+
+- Campo de input para o nome da cidade.
+- Busca das condições climáticas em tempo real via OpenWeatherMap.
+- Exibição do nome da cidade, país, temperatura (em Celsius) e descrição do clima.
+- Exibição do ícone do clima correspondente.
+- Mensagem de erro caso a cidade não seja encontrada.
+
+## 📡 API Utilizada
+
+A aplicação consome dados da **OpenWeatherMap API**, que fornece informações detalhadas de previsão do tempo. Para utilizar a API, é necessário obter uma chave de API gratuita no site oficial.
+
+- Endpoint utilizado:
+
+https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}&units=metric&lang=pt_br
+
+
+## 🗂️ Arquitetura de Pastas
+  ```bash
+    ├── .editorconfig
+    ├── .gitignore
+    ├── .vscode
+        ├── extensions.json
+        ├── launch.json
+        └── tasks.json
+    ├── README.md
+    ├── angular.json
+    ├── package-lock.json
+    ├── package.json
+    ├── public
+        └── favicon.ico
+    ├── src
+        ├── app
+        │   ├── app.component.css
+        │   ├── app.component.html
+        │   ├── app.component.spec.ts
+        │   ├── app.component.ts
+        │   ├── app.config.server.ts
+        │   ├── app.config.ts
+        │   ├── app.routes.server.ts
+        │   └── app.routes.ts
+        ├── environments
+        │   └── environment.ts
+        ├── index.html
+        ├── main.server.ts
+        ├── main.ts
+        ├── server.ts
+        └── styles.css
+    ├── tsconfig.app.json
+    ├── tsconfig.json
+    └── tsconfig.spec.json
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 📌 Como rodar o projeto
 
-## Code scaffolding
+1. Clone o repositório:
+    ```bash
+   git clone https://github.com/felipedestroo/clima-tempo.git
+   cd clima-tempo
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+2. Instale as dependências:
+    ```bash
+    npm install
+    
+3. Configure sua chave da API da OpenWeatherMap no arquivo app.component.ts.
 
-```bash
-ng generate component component-name
-```
+4. Rode o projeto localmente:
+    ```bash
+    ng serve
+5. Acesse em: http://localhost:4200
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Feito por Felipe Destro 🚀
