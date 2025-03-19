@@ -17,6 +17,7 @@
       <h2>{{ weatherData.name }} - {{ weatherData.sys.country }}</h2>
       <p>Temperatura: {{ weatherData.main.temp }}°C</p>
       <p>Clima: {{ weatherData.weather[0].description }}</p>
+      <p>Vento: {{ weatherData.wind.speed }} Km/h</p>
       <img
         [src]="'http://openweathermap.org/img/wn/' + weatherData.weather[0].icon + '@2x.png'"
         alt="Ícone do clima"
